@@ -1,13 +1,19 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './styles/App.css';
 
 
 function App() {
   return (
     <div className="App">
-      <h1> Project Start (:) </h1>
-    </div>
+    <header className="App-header">
+     <BrowserRouter>
+     <Link to='/'>Signup/login</Link>
+     <Link to= '/Home'>Home</Link>
+     <Link to='/Back'>Back</Link>
+     </BrowserRouter>
+     </header>
+     </div>
   );
 }
 
