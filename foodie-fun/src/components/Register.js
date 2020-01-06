@@ -16,7 +16,7 @@ class Login extends Component {
 
 }
 
-  upadate(e) {
+  update(e) {
       let name = e.target.name;
       let value = e.target.value;
       this.setState({
@@ -75,7 +75,7 @@ class Login extends Component {
                     <input type="submit" value="Login"/>
                 </form>
 
-                <link to="/">Login Here</link>
+                <Link to="/">Login Here</Link>
             </div>
         )
 
