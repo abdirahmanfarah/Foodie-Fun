@@ -43,7 +43,7 @@ class Login extends Component {
                         type="text"
                         placeholder="Username..."
                         value={this.state.email}
-                        onChange={this.upadate}
+                        onChange={this.update}
                         name="email"
                         />
                      </div>   
@@ -52,14 +52,14 @@ class Login extends Component {
                         type="password"
                         placeholder="Password..."
                         value={this.state.password}
-                        onChange ={this.upadate}           
+                        onChange ={this.update}           
                         name="password"            
                         />
                     </div>
                     <input type="submit" value="Login"/>
                 </form>
 
-                 <Link to="/register">Create an account</Link> 
+                 <Link to="/Register">Create an account</Link> 
             </div>
         )
 

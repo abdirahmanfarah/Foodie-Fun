@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+ 
 }
 
 .App-logo {
@@ -41,6 +42,7 @@ body {
 .login,
 .register {
   width: 400px;
+  margin-left: 30%;
 }
 .login h2,
 .register h2 {
@@ -61,7 +63,7 @@ input[type="text"] {
   padding: 20px 30px;
 }
 input[type='password'] {
-  background-color: #e6e6e6;
+  background-color: white;
   padding: 20px 30px;
   color: #827ffe;
   font-size: 16px;
@@ -90,11 +92,4 @@ input[type='submit']{
   border-radius: 3px;
   transition: all 250ms ease-in-out;
   cursor: pointer;
- 
-  &:hover {
-    background-color: #804c39;
-  }
-  &:focus {
-    outline: none;
-  }
 }

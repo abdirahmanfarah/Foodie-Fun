@@ -46,7 +46,7 @@ class Login extends Component {
                         placeholder="Full Name"
                         name="fullname" 
                         value={this.state.fullname}
-                        onChange ={this.upadate}           
+                        onChange ={this.update}           
                                    
                   />                                           
                     </div>
@@ -56,7 +56,7 @@ class Login extends Component {
                         placeholder="Enter your email"
                         name="email" 
                         value={this.state.fullname}
-                        onChange ={this.upadate}   
+                        onChange ={this.update}   
                         />
                     </div>
                     <div className="password">   
@@ -64,12 +64,12 @@ class Login extends Component {
                         type="password"
                         placeholder="Password..."
                         value={this.state.password}
-                        onChange ={this.upadate}           
+                        onChange ={this.update}           
                         name="password"            
                         />
                     </div>
                     <div className="password">
-						<input type="password" placeholder="Confirm Password" name="password1" />
+						<input type="password" placeholder="Confirm Password" name="password" />
 					</div>
                     
                     <input type="submit" value="Submit"/>
