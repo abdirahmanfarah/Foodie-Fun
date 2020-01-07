@@ -23,7 +23,7 @@ const Dashboard = props => {
 
         ))}
       </TestData>
-       <button> <Link to ='/restaurant'>Check In</Link></button> 
+       <CheckInButton> <Link to ='/restaurant'>Check In</Link></CheckInButton> 
     
     </div>
   )
@@ -43,15 +43,29 @@ export default connect(mapStateToProps,
 
 const TestData = styled.div `
   width:60%;
-  background:grey;
   display:flex;
-  justify-content:center;
+  border:1px solid red;
+  justify-content:space-evenly;
+  align-item:center;
   flex-wrap:wrap;
-  margin:auto;
+  margin:20px auto;
 `
 const TestCard = styled.div `
+  border:1px solid red;
   display:flex;
-  justify-content: center;
-  align-content:center;
+  justify-content:space-evenly;
+  align-item:center;
   padding:20px;
+  width:80%;
+  margin: auto;
 `
+
+const CheckInButton = styled.button `
+  padding:30px;
+  width:40%;
+  background:orange;
+  font-size:1.2rem;
+`
+// const Link = styled.link `
+//   font-size:1.2rem;
+// `
