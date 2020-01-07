@@ -55,11 +55,13 @@ class Login extends Component {
                         onChange ={this.update}           
                         name="password"            
                         />
-                    </div>
-                    <input type="submit" value="Login"/>
+                    </div>                 
+                    <button>Login</button>
                 </form>
 
-                 <Link to="/Register">Create an account</Link> 
+                <button>
+                 <Link to="/Register">Create an account</Link>
+                 </button> 
             </div>
         )
 

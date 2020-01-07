@@ -55,7 +55,7 @@ class Login extends Component {
                         type="text"
                         placeholder="Enter your email"
                         name="email" 
-                        value={this.state.fullname}
+                        value={this.state.email}
                         onChange ={this.update}   
                         />
                     </div>
@@ -72,10 +72,11 @@ class Login extends Component {
 						<input type="password" placeholder="Confirm Password" name="password" />
 					</div>
                     
-                    <input type="submit" value="Submit"/>
+                    <button>Register</button>
                 </form>
-
+                <button>
                 <Link to="/">Log in Here</Link>
+                </button>
             </div>
         )
 
