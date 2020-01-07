@@ -25,6 +25,8 @@ function App() {
         {/* Private Routes*/}
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/restaurant' component={RestaurantList} />
+
+
       </Switch>
       
     </div>
