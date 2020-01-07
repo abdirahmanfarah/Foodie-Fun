@@ -25,10 +25,10 @@ const RestaurantForm = props => {
   return (
     <RestaurantFormContainer>
       <h1>Restaurant Name </h1>
-      <InputA name='name' placeholder='name' onChange={handleChange} value={newRes.name}/>
+      <InputA name='name' placeholder='restaurant' onChange={handleChange} value={newRes.name}/>
       <InputA name="location" placeholder="location" onChange={handleChange} value={newRes.location} />
       <InputA name='time' placeholder='time' onChange={handleChange} value={newRes.time} />
-      <SelectA name="cusine" value={newRes.cuisine} onChange={handleChange}>
+      <SelectA name="cuisine" value={newRes.cuisine} onChange={handleChange}>
         <option value='American'>American</option>
         <option value='Chinese'>Chinese</option>
         <option value='Mexican'>Mexican</option>
