@@ -72,10 +72,10 @@ class Login extends Component {
 						<input type="password" placeholder="Confirm Password" name="password1" />
 					</div>
                     
-                    <input type="submit" value="Login"/>
+                    <input type="submit" value="Submit"/>
                 </form>
 
-                <Link to="/">Login Here</Link>
+                <Link to="/">Log in Here</Link>
             </div>
         )
 

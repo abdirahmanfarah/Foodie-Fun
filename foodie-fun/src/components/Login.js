@@ -56,7 +56,7 @@ class Login extends Component {
                         name="password"            
                         />
                     </div>
-                    <input type="submit" value="login"/>
+                    <input type="submit" value="Login"/>
                 </form>
 
                  <Link to="/register">Create an account</Link> 

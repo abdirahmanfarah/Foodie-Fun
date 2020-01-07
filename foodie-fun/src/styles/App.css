@@ -22,3 +22,79 @@
 .App-link {
   color: #61dafb;
 }
+
+body {
+  background-image: url("../images/background-img.jpg");
+ background-color: #cccccc;
+  padding: 200px 100px;
+  margin: 0px;
+  background-position: center;
+  /* font-family:  */
+}
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login,
+.register {
+  width: 400px;
+}
+.login h2,
+.register h2 {
+  font-size: 45px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.login a {
+text-align: center;
+}
+input[type="text"] {
+  background-color: white;
+  color: blueviolet;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: none;
+  width: 85%;
+  padding: 20px 30px;
+}
+input[type='password'] {
+  background-color: #e6e6e6;
+  padding: 20px 30px;
+  color: #827ffe;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: none;
+  width: 85%;
+}
+input[type='submit']{
+  padding: 15px 0px;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  width: 100%;
+}
+.check {
+  font-size: 16px;
+}
+.button {
+  font-size: 21px;
+  padding: 5px 20px;
+  border: 0;
+  background-color: #c45228;
+  color: #fff;
+  border-radius: 3px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+ 
+  &:hover {
+    background-color: #804c39;
+  }
+  &:focus {
+    outline: none;
+  }
+}

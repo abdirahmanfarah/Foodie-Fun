@@ -20,15 +20,15 @@ function App() {
     <div className="App">
     <header className="App-header">
      <BrowserRouter>
-     <Link to='/'>login</Link> 
+     <Link to='/'>Login</Link> 
      <Link to='/Register'>Register</Link> 
      <Link to= '/Home'>Home</Link>
-     <Link to='/Back'>Back</Link>
+     {/* <Link to='/Back'>Back</Link> */}
 
      <Route exact path='/' component={Login}/> 
      <Route exact path='/Register' component={Register}/> 
      <Route path='/Home' component={Home}/>
-     <Route path='/Back' component={Back}/>
+     {/* <Route path='/Back' component={Back}/> */}
 
      </BrowserRouter>
      </header>
