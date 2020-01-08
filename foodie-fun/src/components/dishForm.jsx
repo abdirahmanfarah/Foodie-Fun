@@ -29,7 +29,7 @@ const DishForm = props => {
           <option value='5'>5</option>
       </SelectB>
       <TextareaB name="review" value={newDish.review} onChange={handleChange} placeholder='description' />
-      <ButtonDish>Add Restaurant</ButtonDish>
+      <ButtonDish>Add New Dish</ButtonDish>
     </DishFormContainer>
   )
 }
