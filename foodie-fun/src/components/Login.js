@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 class Login extends Component {
    constructor(props) {
@@ -28,7 +29,7 @@ class Login extends Component {
       console.log('You are logged in');
       console.log(this.state);
       this.setState({
-          email: '',
+          username: '',
           passsword: ''
       });
   }
@@ -44,7 +45,7 @@ class Login extends Component {
                         placeholder="Username"
                         value={this.state.email}
                         onChange={this.update}
-                        name="email"
+                        name="username"
                         />
                      </div>   
                      <div className="password">   
@@ -55,16 +56,29 @@ class Login extends Component {
                         onChange ={this.update}           
                         name="password"            
                         />
-                    </div>                 
-                    <button>Login</button>
+                    </div>
+                    <Button>Login</Button>               
+                    
+                    
                 </form>
 
                 <button>
-                 <Link to="/Register">Create an account</Link>
+                 <Link to="/Register">Sign up</Link>
                  </button> 
             </div>
         )
 
     };
 }    
+
+const Button = styled.button`
+width: 100px;
+font-size: 1.3rem;
+border: none;
+border-radius: 13px;
+background: #FFA500;
+&:hover{
+   background : #C45228;
+}
+`
 export default Login;

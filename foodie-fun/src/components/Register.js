@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 class Login extends Component {
    constructor(props) {
     super(props);
 
     this.state={
-        fullname: '',
+        username: '',
         email:'',
         password:''
     }
@@ -29,9 +30,9 @@ class Login extends Component {
       console.log('You have successfully registered');
       console.log(this.state);
       this.setState({
-          fullname: '',
+          username: '',
           email: '',
-          passsword: ''
+          passsword: ''   
       });
   }
 
@@ -43,9 +44,9 @@ class Login extends Component {
                     <div className='name'>
                  <input
                         type="text"
-                        placeholder="Full Name"
-                        name="fullname" 
-                        value={this.state.fullname}
+                        placeholder="Create Username"
+                        name="username" 
+                        value={this.state.username}
                         onChange ={this.update}           
                                    
                   />                                           
@@ -69,16 +70,30 @@ class Login extends Component {
                         />
                     </div>
                     <div className="password">
-						<input type="password" placeholder="Confirm Password" name="password" />
+                     <input 
+                      type="password" 
+                      placeholder="Confirm Password" 
+                      value={this.state.password}
+                      onChange={this.update}
+                      name="password" 
+                      />
 					</div>
-                    
-                    <button>Register</button>
+                      <button>Register</button>
+                       {/* <Button>Register</Button>  */}
                 </form>
                 <button>
                 <Link to="/">Log in Here</Link>
                 </button>
             </div>
         )
+
+         const Button = styled.button`
+          width: 100px;
+          font-size: 1.3rem;
+         border: none;
+          border-radius: 13px;
+          background: #C45228;
+   `
 
     };
 }    
