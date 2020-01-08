@@ -62,7 +62,7 @@ class Login extends Component {
                     
                 </form>
 
-                <button>
+                <button className='link-btn'>
                  <Link to="/Register">Sign up</Link>
                  </button> 
             </div>

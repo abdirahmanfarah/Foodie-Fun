@@ -78,22 +78,17 @@ class Login extends Component {
                       name="password" 
                       />
 					</div>
-                      <button>Register</button>
-                       {/* <Button>Register</Button>  */}
+                     <div>
+                         <button className='Register'>Register</button>
+                     </div>
                 </form>
-                <button>
+                <button className='link-btn'>
                 <Link to="/">Log in Here</Link>
                 </button>
             </div>
         )
 
-         const Button = styled.button`
-          width: 100px;
-          font-size: 1.3rem;
-         border: none;
-          border-radius: 13px;
-          background: #C45228;
-   `
+        
 
     };
 }    

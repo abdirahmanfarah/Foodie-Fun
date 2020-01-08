@@ -93,3 +93,18 @@ input[type='submit']{
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
+.Register {
+  width: 100px;
+font-size: 1.3rem;
+border: none;
+border-radius: 13px;
+background: #FFA500;
+}
+.Register:hover{
+   background: #C45228; 
+  }
+.link-btn{
+  background: #FFA500;
+  border: none;
+  border-radius: 13px;
+}
