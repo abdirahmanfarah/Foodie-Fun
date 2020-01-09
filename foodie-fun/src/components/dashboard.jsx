@@ -1,41 +1,50 @@
 // home-page to host the front-page of our app
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import RestaurentList from './restaurantList';
 import { Link } from 'react-router-dom';
-import {testData} from '../testData';
+import RestaurantCard from './restaurantCard';
+
+//Action
+import { fetchRestaurant } from '../actions/restaurantAction';
 
 // Style
 import styled from 'styled-components';
 
-
 const Dashboard = props => {
-  console.log(testData.restaurants);
-  return (
+  console.log(props.rest);
+
+  useEffect(() => {
+    props.fetchRestaurant();
+    if(props.rest) {
+      console.log(props.rest)
+    }
+  }, [])
+
+
+  return props.rest ? (
+
     <div>
       <TestData>
-        {testData.restaurants.map(test => (
-         <TestCard key={test.id}>
-            <p>Name: {test.restaurant} </p>
-            <p>description: {test.description} </p>
-         </TestCard>
-
-        ))}
+        <h1>Restaurants</h1>
+          {props.rest.map(res => (
+          <RestaurantCard key={res.id} res={res} />
+        ))} 
       </TestData>
        <CheckInButton> <Link to ='/restaurant'>Check In</Link></CheckInButton> 
     
     </div>
-  )
+  ) : (<div>Loading...</div>)
 }
 
 const mapStateToProps = state => {
   return {
-    state
+    user: state.user,
+    rest: state.restaurants
   }
 }
 export default connect(mapStateToProps, 
-  {})(Dashboard);
+  { fetchRestaurant })(Dashboard);
 
 
 
@@ -49,15 +58,6 @@ const TestData = styled.div `
   align-item:center;
   flex-wrap:wrap;
   margin:20px auto;
-`
-const TestCard = styled.div `
-  border:1px solid red;
-  display:flex;
-  justify-content:space-evenly;
-  align-item:center;
-  padding:20px;
-  width:80%;
-  margin: auto;
 `
 
 const CheckInButton = styled.button `

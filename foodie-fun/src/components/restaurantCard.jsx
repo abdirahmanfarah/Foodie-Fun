@@ -1,14 +1,22 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import styled from 'styled-components';
 
 const RestaurantCard = props => {
   console.log(props);
 
   return (
-    <div>
-        {/* <p>Name: {props}</p> */}
+    <DashboardCard>
+        <p>Name: {props.res.name}</p>
+        <p>Cuisine: {props.res.cuisine}</p>
+        <p>Location: {props.res.location}</p>
+        <p>Hours: {props.res.hours_of_operation}</p>
+        <p>Rating: {props.res.rating}</p>
+        <Image alt='' src={props.res.image_url} key={props.res.id}/>
 
-    </div>
+
+
+    </DashboardCard>
   )
 }
 
@@ -19,3 +27,17 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {})(RestaurantCard);
+
+const DashboardCard = styled.div `
+  border:1px solid red;
+  display:flex;
+  justify-content:space-evenly;
+  align-item:center;
+  padding:20px;
+  width:80%;
+  margin: auto;
+`
+const Image = styled.img `
+  width:20%;
+  height:20%;
+`

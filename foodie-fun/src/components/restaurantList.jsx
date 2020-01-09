@@ -8,12 +8,18 @@ import RestaurantCard from './restaurantCard'
 
 const RestaurantList = props => {
   console.log(props);
-  return (
+  return (             
     <div>
       <h1>Favorites</h1>
       {/* Search-Bar goes here */}
+      <div>
+          {props.favorites.map(res => (
+          <RestaurantCard key={res.id} res={res} />
+        ))} 
+      </div>
+
      
-       <RestaurantCard /> 
+       {/* <RestaurantCard />  */}
      
     </div>
   )
@@ -21,7 +27,9 @@ const RestaurantList = props => {
 
 const mapStateToProps = state => {
   return{
-    state
+    user: state.user,
+    rest: state.restaurants,
+    favorites: state.favorites
   }
 }
 
