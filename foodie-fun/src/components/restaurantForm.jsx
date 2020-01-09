@@ -5,11 +5,17 @@ import styled from 'styled-components';
 
 
 const RestaurantForm = props => {
-  console.log(props.favorites);
+  // console.log(props.favorites);
   const[newRes, setNewRes] = useState({});
 
   const handleChange = e => {
-    setNewRes({...newRes, [e.target.name] : e.target.value})
+    if(e.target.name === 'cuisine_id'){
+      const number = parseInt(e.target.value)
+    setNewRes({...newRes, [e.target.name] : number})
+    }else {
+
+      setNewRes({...newRes, [e.target.name] : e.target.value})
+    }
   }
 
   const addRestaurant = e => {
@@ -26,7 +32,7 @@ const RestaurantForm = props => {
 
       <InputA name='hours_of_operation' placeholder='time' onChange={handleChange} value={newRes.hours_of_operation} />
 
-      <InputA type='number' name='cuisine_id' placeholder='cuisine' onChange={handleChange} value={Number(newRes.cuisine_id)} />
+      <InputA type='number' name='cuisine_id' placeholder='cuisine' onChange={handleChange} value={newRes.cuisine_id} />
 
       {/* <SelectA name="cuisine" value={newRes.cuisine} onChange={handleChange}>
         <option value='American'>American</option>

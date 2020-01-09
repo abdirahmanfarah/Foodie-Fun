@@ -25,11 +25,11 @@
 }
 
 body {
-  background-image: url("../images/background-img.jpg");
- background-color: #cccccc;
-  padding: 200px 100px;
-  margin: 0px;
-  background-position: center;
+  /* background-image: url("../images/background-img.jpg"); */
+ /* background-color: #cccccc; */
+  /* padding: 200px 100px; */
+  /* margin: 0px; */
+  /* background-position: center; */
   /* font-family:  */
 }
 .container {
@@ -43,6 +43,8 @@ body {
 .register {
   width: 400px;
   margin-left: 30%;
+  border:1px solid black;
+  background:orange;
 }
 .login h2,
 .register h2 {
@@ -58,7 +60,7 @@ input[type="text"] {
   color: blueviolet;
   font-size: 16px;
   margin-bottom: 20px;
-  border: none;
+  /* border: none; */
   width: 85%;
   padding: 20px 30px;
 }
@@ -68,7 +70,7 @@ input[type='password'] {
   color: #827ffe;
   font-size: 16px;
   margin-bottom: 20px;
-  border: none;
+  /* border: none; */
   width: 85%;
 }
 input[type='submit']{

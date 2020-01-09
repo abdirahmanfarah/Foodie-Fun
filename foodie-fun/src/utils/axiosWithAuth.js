@@ -1,15 +1,15 @@
-// import axios from axios
+import axios from 'axios';
 
-// export const axiosWithAuth = () => {
-//   //retrieving auth token from localStorage
-//   const token = localStorage.getItem('token')
+export const axiosWithAuth = () => {
+  //retrieving auth token from localStorage
+  const token = localStorage.getItem('token')
 
-//   //create axios instance with Auth token
+  //create axios instance with Auth token
 
-//   return axios.create({
-//     baseURL: 'https://localhost:5000/api',
-//     headers: {
-//       Authorization: token
-//     }
-//   });
-// }
+  return axios.create({
+    baseURL: 'https://foodiefun-app.herokuapp.com/api',
+    headers: {
+      Authorization: token
+    }
+  });
+}

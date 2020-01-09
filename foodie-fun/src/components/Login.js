@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+
+//Imports
 
 class Login extends Component {
    constructor(props) {
@@ -16,15 +20,30 @@ class Login extends Component {
 
 }
 
-  update(e) {
-      let name = e.target.name;
-      let value = e.target.value;
-      this.setState({
-          [name]: value
-      });
-  }
 
-  displayLogin(e) {
+
+update(e) {
+    let name = e.target.name;
+    let value = e.target.value;
+    this.setState({
+        [name]: value
+    });
+}
+
+login = e => {
+    e.preventDefault();
+    axios
+    .post('https://foodiefun-app.herokuapp.com/api/auth/login', this.state.username )
+    .then(res => {
+      console.log(res.data)
+      localStorage.setItem('token', res.data.payload)
+      localStorage.setItem('username', this.state.username)
+      this.props.history.push('/dashboard')
+    })
+    .catch(err => console.log('Error', err))
+}
+
+displayLogin(e) {
       e.preventDefault();
       console.log('You are logged in');
       console.log(this.state);
@@ -37,7 +56,7 @@ class Login extends Component {
     render(){
         return (
             <div className="login">
-                <form onSubmit={this.displayLogin}>
+                <form onSubmit={this.login}>
                     <h2>Login</h2>
                     <div className='username'>
                         <input

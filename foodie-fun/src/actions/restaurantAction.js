@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { axiosWithAuth } from '../utils/axiosWithAuth'
+
 export const FETCHING_RESTAURANT_SUCCESS = 'FETCHING_RESTAURANT_SUCCESS'
 export const FETCHING_RESTAURANT_FAILURE = 'FETCHING_RESTAURANT_FAILURE'
 export const ADDING_RESTAURANT = 'ADDING_RESTAURANT'
@@ -20,8 +22,8 @@ export const fetchRestaurant = () => dispatch => {
 
 export const addRestaurant = (add) => dispatch => {
   console.log(add)
-  axios
-    .post('https://foodiefun-app.herokuapp.com/api/restaurants', add)
+  axiosWithAuth()
+    .post('/restaurants', add)
     .then(res => {
       console.log(res.data)
       dispatch({type: ADDING_RESTAURANT, payload:res.data})

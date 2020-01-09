@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+// import { axiosWithAu } from '../utils/axiosWithAuth';
+import axios from 'axios';
 
 class Login extends Component {
    constructor(props) {
@@ -17,29 +19,43 @@ class Login extends Component {
 
 }
 
-  update(e) {
-      let name = e.target.name;
-      let value = e.target.value;
-      this.setState({
-          [name]: value
-      });
-  }
+ register = e => {
+    e.preventDefault();
 
-  displayLogin(e) {
-      e.preventDefault();
-      console.log('You have successfully registered');
-      console.log(this.state);
-      this.setState({
-          username: '',
-          email: '',
-          passsword: ''   
-      });
+    axios
+      .post('https://foodiefun-app.herokuapp.com/api/auth/signup', this.state)
+        .then(res => {
+          console.log(res.data)
+          this.props.history.push('/')
+        })
+        .catch(err => console.log(err))
   }
+  
+  
+       update(e) {
+
+            let name = e.target.name;
+            let value = e.target.value;
+            this.setState({
+                [name]: value
+            });
+            }
+    displayLogin(e) {
+     e.preventDefault();
+                console.log('You have successfully registered');
+                console.log(this.state);
+                this.setState({
+                    username: '',
+                    email: '',
+                    passsword: '',
+                    location: ''
+                });
+            }
 
     render(){
         return (
             <div className="register">
-                <form onSubmit={this.displayLogin}>
+                <form onSubmit={this.register}>
                     <h2>Register</h2>
                     <div className='name'>
                  <input
@@ -63,7 +79,7 @@ class Login extends Component {
                     <div className="password">   
                         <input
                         type="password"
-                        placeholder="New Password"
+                        placeholder="password"
                         value={this.state.password}
                         onChange ={this.update}           
                         name="password"            
@@ -71,11 +87,11 @@ class Login extends Component {
                     </div>
                     <div className="password">
                      <input 
-                      type="password" 
-                      placeholder="Confirm Password" 
-                      value={this.state.password}
+                      type="location" 
+                      placeholder="location" 
+                      value={this.state.location}
                       onChange={this.update}
-                      name="password" 
+                      name="location" 
                       />
 					</div>
                      <div>
