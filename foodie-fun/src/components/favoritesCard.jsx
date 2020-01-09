@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { deleteRest } from '../actions';
 
@@ -29,7 +30,7 @@ const FavoritesCard = props => {
           <p>Rating: {props.res.rating}</p>
          <SmallContainer>
             <Image alt='' src={props.res.image_url} key={props.res.id}/>
-              <ButtonChange>Edit</ButtonChange>
+              <ButtonChange><Link to ='/restaurants/:id'>Edit</Link></ButtonChange>
               <ButtonChange onClick={e => handleDelete(e, props.res.id)}>Delete</ButtonChange>
          </SmallContainer>
        </DashContainer >

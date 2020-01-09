@@ -9,6 +9,7 @@ import RestaurantList  from './components/restaurantList';
 import RestaurantForm from './components/restaurantForm';
 import DishForm from './components/dishForm';
 import PrivateRoute from './components/PrivateRoute';
+import EditRestaurant from './components/editRestaurant';
 //Styles
 import './styles/App.css';
 import styled from 'styled-components';
@@ -52,6 +53,7 @@ function App() {
         <PrivateRoute path='/restaurant' component={RestaurantForm}/>
         <PrivateRoute path='/newdish' component={DishForm} />
         <PrivateRoute path='/restaurants' component={RestaurantList} />
+        <PrivateRoute path='/restaurants/:id' component={EditRestaurant} />
 
 
       </Switch>
