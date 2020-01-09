@@ -1,6 +1,8 @@
 import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+import './styles/App.css';
+import Login from './components/Login';
+import Register from './components/Register'
 //Imported Components
 import Dashboard from './components/dashboard'
 import RestaurantList  from './components/restaurantList';
@@ -8,7 +10,18 @@ import RestaurantForm from './components/restaurantForm';
 import DishForm from './components/dishForm';
 //Styles
 import styled from 'styled-components';
-import './styles/App.css';
+import './styles/App.css';  
+
+function Signup(props) {
+  return <h1>Signup/login</h1>
+}
+function Home(props) {
+  return <h1>Home</h1>
+}
+
+function Back(props) {
+  return <h1>Back</h1>
+}
 
 function App() {
   return (
@@ -28,9 +41,9 @@ function App() {
       <Switch>
 
       
-        {/* <Route exact path='/' component={} /> */}
-        {/* <Route path ='/' component= {Login} /> */}
-        {/* <Route path ='/' component={Register} /> */}
+        <Route exact path='/Home' component={Home} /> 
+        <Route exact path='/' component={Login} /> 
+        <Route path='/Register' component={Register} /> 
         
         {/* Private Routes*/}
         <Route path='/dashboard' component={Dashboard} />
