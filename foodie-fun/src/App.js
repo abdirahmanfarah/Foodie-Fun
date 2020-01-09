@@ -7,7 +7,6 @@ import Register from './components/Register'
 import Dashboard from './components/dashboard'
 import RestaurantList  from './components/restaurantList';
 import RestaurantForm from './components/restaurantForm';
-import DishForm from './components/dishForm';
 import PrivateRoute from './components/PrivateRoute';
 import EditRestaurant from './components/editRestaurant';
 //Styles
@@ -53,7 +52,7 @@ function App() {
         <PrivateRoute path='/restaurant' component={RestaurantForm}/>
         {/* <PrivateRoute path='/newdish' component={DishForm} /> */}
         <PrivateRoute path='/restaurants' component={RestaurantList} />
-        <PrivateRoute path='/restaurants/:id' component={EditRestaurant} />
+        <PrivateRoute path='/restaurants_id/:id' component={EditRestaurant} />
 
 
       </Switch>

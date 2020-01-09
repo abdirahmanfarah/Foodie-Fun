@@ -13,3 +13,4 @@ export const axiosWithAuth = () => {
     }
   });
 }
+// https://cors-anywhere.herokuapp.com/

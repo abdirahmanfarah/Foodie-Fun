@@ -6,6 +6,7 @@ import {
   DELETE_RESTAURANT,
   // DELETE_RESTAURANT_FAIL
   // ADDING_RESTAURANT_FAILURE
+  EDIT_RESTAURANT
 } from '../actions';
 
 const initialState = {
@@ -26,7 +27,7 @@ function userReducer(state = initialState, action) {
           username: action.payload
         }
       }
-    case FETCHING_RESTAURANT_SUCCESS:
+    case FETCHING_RESTAURANT_SUCCESS: 
       return {
            ...state, 
           restaurants:action.payload }
@@ -44,6 +45,14 @@ function userReducer(state = initialState, action) {
           rest => rest.id !== action.payload
         )
       }
+    
+    case EDIT_RESTAURANT :
+        return {
+          ...state,
+          restaurants: state.restaurants.filter(
+            rest => rest.id !== action.payload
+          )
+        }
     default:
       return state
   }

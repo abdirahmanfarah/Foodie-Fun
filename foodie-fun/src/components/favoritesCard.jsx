@@ -7,12 +7,6 @@ import { deleteRest } from '../actions';
 const FavoritesCard = props => {
   console.log(props);
 
-  // useEffect(() => {
-  //   props.deleteRest();
-  //   if(props.rest) {
-  //     console.log(props.rest)
-  //   }
-  // }, [])
 
   const handleDelete = (e, id) => {
     e.preventDefault();
@@ -30,7 +24,9 @@ const FavoritesCard = props => {
           <p>Rating: {props.res.rating}</p>
          <SmallContainer>
             <Image alt='' src={props.res.image_url} key={props.res.id}/>
-              <ButtonChange><Link to ='/restaurants/:id'>Edit</Link></ButtonChange>
+
+              <ButtonChange><Link to ={`/restaurants_id/${props.res.id}`}>Edit</Link></ButtonChange>
+
               <ButtonChange onClick={e => handleDelete(e, props.res.id)}>Delete</ButtonChange>
          </SmallContainer>
        </DashContainer >
