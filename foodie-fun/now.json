@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "name": "foodie-fun",
-  "builds": [{ "src": "foodie-fun/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
-  "routes": [
-      { "src": "/static/(.*)", "dest": "foodie-fun/static/$1" }
-  ]
-}
