@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
+
+//Imports
 
 class Login extends Component {
    constructor(props) {
@@ -16,15 +20,29 @@ class Login extends Component {
 
 }
 
-  update(e) {
-      let name = e.target.name;
-      let value = e.target.value;
-      this.setState({
-          [name]: value
-      });
-  }
 
-  displayLogin(e) {
+
+update(e) {
+    let name = e.target.name;
+    let value = e.target.value;
+    this.setState({
+        [name]: value
+    });
+}
+
+login = e => {
+    e.preventDefault();
+    axiosWithAuth()
+    .post('/auth/login', this.state )
+    .then(res => {
+      console.log(res.data)
+      localStorage.setItem('token', res.data.payload)
+     this.props.history.push('/dashboard')
+    })
+    .catch(err => console.log('Error', err))
+}
+
+displayLogin(e) {
       e.preventDefault();
       console.log('You are logged in');
       console.log(this.state);
@@ -37,7 +55,7 @@ class Login extends Component {
     render(){
         return (
             <div className="login">
-                <form onSubmit={this.displayLogin}>
+                <form onSubmit={this.login}>
                     <h2>Login</h2>
                     <div className='username'>
                         <input
@@ -70,6 +88,7 @@ class Login extends Component {
 
     };
 }    
+export default Login;
 
 const Button = styled.button`
 width: 100px;
@@ -81,4 +100,3 @@ background: #FFA500;
    background : #C45228;
 }
 `
-export default Login;

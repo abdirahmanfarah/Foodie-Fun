@@ -2,6 +2,7 @@ import {
   FETCHING_RESTAURANT_SUCCESS,
   // FETCHING_RESTAURANT_FAILURE,
   ADDING_RESTAURANT,
+  setUserTypes,
   // ADDING_RESTAURANT_FAILURE
 } from '../actions';
 
@@ -15,6 +16,14 @@ const initialState = {
 function userReducer(state = initialState, action) {
   switch(action.type) {
 
+    case setUserTypes.SUCCESS: 
+      return {
+        ...state,
+        isFetching: false,
+        user: {
+          username: action.payload
+        }
+      }
     case FETCHING_RESTAURANT_SUCCESS:
       return {
            ...state, 
@@ -23,7 +32,7 @@ function userReducer(state = initialState, action) {
     case ADDING_RESTAURANT:
       return {
         ...state,
-        favorites: [...state.favorites, action.payload]
+        favorites: action.payload
       }
 
     default:
