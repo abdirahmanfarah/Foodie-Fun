@@ -42,7 +42,7 @@ function App() {
 
       
         <Route exact path='/Home' component={Home} /> 
-        <Route exact path='/' component= {Login} /> 
+        <Route exact path='/' component={Login} /> 
         <Route path='/Register' component={Register} /> 
         
         {/* Private Routes*/}
