@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
 // import { axiosWithAu } from '../utils/axiosWithAuth';
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class Login extends Component {
    constructor(props) {
@@ -22,8 +23,8 @@ class Login extends Component {
  register = e => {
     e.preventDefault();
 
-    axios
-      .post('https://foodiefun-app.herokuapp.com/api/auth/signup', this.state)
+    axiosWithAuth()
+      .post('/auth/signup', this.state)
         .then(res => {
           console.log(res.data)
           localStorage.setItem('token', res.data.payload)

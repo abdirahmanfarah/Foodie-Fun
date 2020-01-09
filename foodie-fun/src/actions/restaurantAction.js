@@ -25,7 +25,7 @@ export const addRestaurant = (add) => dispatch => {
   axiosWithAuth()
     .post('/restaurants', add)
     .then(res => {
-      console.log(res.data)
+      console.log(res)
       dispatch({type: ADDING_RESTAURANT, payload:res.data})
     })
     .catch(err => {

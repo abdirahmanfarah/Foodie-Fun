@@ -33,10 +33,10 @@ update(e) {
 login = e => {
     e.preventDefault();
     axiosWithAuth()
-    .post('/auth/login', this.state )
+    .post('/auth/login', this.state)
     .then(res => {
       console.log(res.data)
-      localStorage.setItem('token', res.data.payload)
+      localStorage.setItem('token', res.data.token)
      this.props.history.push('/dashboard')
     })
     .catch(err => console.log('Error', err))
@@ -81,7 +81,7 @@ displayLogin(e) {
                 </form>
 
                 <button className='link-btn'>
-                 <Link to="/Register">Sign up</Link>
+                 <Link to="/signup">Sign up</Link>
                  </button> 
             </div>
         )

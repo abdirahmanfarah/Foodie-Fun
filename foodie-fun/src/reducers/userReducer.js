@@ -3,6 +3,8 @@ import {
   // FETCHING_RESTAURANT_FAILURE,
   ADDING_RESTAURANT,
   setUserTypes,
+  DELETE_RESTAURANT,
+  // DELETE_RESTAURANT_FAIL
   // ADDING_RESTAURANT_FAILURE
 } from '../actions';
 
@@ -10,7 +12,7 @@ const initialState = {
   isFetching: false,
   user: {},
   restaurants: [],
-  favorites: []
+  // favorites: []
 }
 
 function userReducer(state = initialState, action) {
@@ -32,9 +34,16 @@ function userReducer(state = initialState, action) {
     case ADDING_RESTAURANT:
       return {
         ...state,
-        favorites: action.payload
+        restaurants: action.payload
       }
-
+    
+    case DELETE_RESTAURANT :
+      return {
+        ...state,
+        restaurants: state.restaurants.filter(
+          rest => rest.id !== action.payload
+        )
+      }
     default:
       return state
   }

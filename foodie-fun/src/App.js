@@ -36,7 +36,7 @@ function App() {
        
           <Link to ='/newdish'>New Dish</Link>
           
-          <Link to ='/favorites'>Favorites</Link>
+          <Link to ='/restaurants'>Favorites</Link>
           
        
     </NavBar>
@@ -45,13 +45,13 @@ function App() {
 
         <Route exact path='/' component={Login} /> 
 
-        <Route path='/Register' component={Register} />
+        <Route path='/signup' component={Register} />
         
         {/* Private Routes*/}
         <PrivateRoute path='/dashboard' component={Dashboard} />
         <PrivateRoute path='/restaurant' component={RestaurantForm}/>
         <PrivateRoute path='/newdish' component={DishForm} />
-        <PrivateRoute path='/favorites' component={RestaurantList} />
+        <PrivateRoute path='/restaurants' component={RestaurantList} />
 
 
       </Switch>

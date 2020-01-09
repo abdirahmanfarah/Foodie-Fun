@@ -21,7 +21,7 @@ const RestaurantForm = props => {
   const addRestaurant = e => {
     e.preventDefault();
     props.addRestaurant({...newRes})
-    console.log(props.favorites);
+    console.log(props.restaurants);
   }
   return (
     <RestaurantFormContainer>
@@ -30,7 +30,7 @@ const RestaurantForm = props => {
 
       <InputA name="location" placeholder="location" onChange={handleChange} value={newRes.location} />
 
-      <InputA name='hours_of_operation' placeholder='time' onChange={handleChange} value={newRes.hours_of_operation} />
+      <InputA name='hours_of_operation' placeholder='hours' onChange={handleChange} value={newRes.hours_of_operation} />
 
       <InputA type='number' name='cuisine_id' placeholder='cuisine' onChange={handleChange} value={newRes.cuisine_id} />
 
@@ -42,15 +42,15 @@ const RestaurantForm = props => {
       </SelectA> */}
       <InputA name='image_url' placeholder='image' onChange={handleChange} value={newRes.image_url} />
 
-      <SelectA name="rating" value={newRes.rating} onChange={handleChange}>
+      {/* <SelectA name="rating" value={newRes.rating} onChange={handleChange}>
           <option  value="initial"> Rating </option>
           <option value='1'>1</option>
           <option value='2'>2</option>
           <option value='3'>3</option>
           <option value='4'>4</option>
           <option value='5'>5</option>
-      </SelectA>
-      <TextareaA name="review" value={newRes.review} onChange={handleChange} placeholder='description' />
+      </SelectA> */}
+      {/* <TextareaA name="review" value={newRes.review} onChange={handleChange} placeholder='description' /> */}
         <ButtonRes onClick={addRestaurant}>Add Restaurant</ButtonRes>
     </RestaurantFormContainer>
   )
@@ -60,7 +60,7 @@ const mapStateToProps = state => {
   return {
     user: state.user,
     rest: state.restaurants,
-    favorites: state.favorites
+    // favorites: state.favorites
   }
 }
 

@@ -1,20 +1,27 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import RestaurantForm from './restaurantForm';
-import RestaurantCard from './restaurantCard'
+import FavoritesCard from './favoritesCard'
 
-// import { Link } from 'react-router-dom';
-
+// Action
+import { fetchRestaurant } from '../actions';
 
 const RestaurantList = props => {
-  console.log(props);
-  return (             
+  console.log(props.rest);
+
+  useEffect(() => {
+    props.fetchRestaurant();
+    if(props.rest) {
+      console.log(props.rest)
+    }
+  }, [])
+
+  return props.rest ? (             
     <div>
       <h1>Favorites</h1>
       {/* Search-Bar goes here */}
       <div>
-          {props.favorites.map(res => (
-          <RestaurantCard key={res.id} res={res} />
+          {props.rest.map(res => (
+          <FavoritesCard key={res.id} res={res}/>
         ))} 
       </div>
 
@@ -22,15 +29,15 @@ const RestaurantList = props => {
        {/* <RestaurantCard />  */}
      
     </div>
-  )
+  ) : (<div> Loading ...</div>)
 }
 
 const mapStateToProps = state => {
   return{
     user: state.user,
     rest: state.restaurants,
-    favorites: state.favorites
+    // favorites: state.favorites
   }
 }
 
-export default connect ( mapStateToProps, {})(RestaurantList);
+export default connect ( mapStateToProps, { fetchRestaurant})(RestaurantList);
