@@ -32,13 +32,12 @@ update(e) {
 
 login = e => {
     e.preventDefault();
-    axios
-    .post('https://foodiefun-app.herokuapp.com/api/auth/login', this.state.username )
+    axiosWithAuth()
+    .post('/auth/login', this.state )
     .then(res => {
       console.log(res.data)
       localStorage.setItem('token', res.data.payload)
-      localStorage.setItem('username', this.state.username)
-      this.props.history.push('/dashboard')
+     this.props.history.push('/dashboard')
     })
     .catch(err => console.log('Error', err))
 }
@@ -89,6 +88,7 @@ displayLogin(e) {
 
     };
 }    
+export default Login;
 
 const Button = styled.button`
 width: 100px;
@@ -100,4 +100,3 @@ background: #FFA500;
    background : #C45228;
 }
 `
-export default Login;

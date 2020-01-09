@@ -26,7 +26,8 @@ class Login extends Component {
       .post('https://foodiefun-app.herokuapp.com/api/auth/signup', this.state)
         .then(res => {
           console.log(res.data)
-          this.props.history.push('/')
+          localStorage.setItem('token', res.data.payload)
+          console.log(res)
         })
         .catch(err => console.log(err))
   }
