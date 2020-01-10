@@ -5,14 +5,13 @@ import styled from 'styled-components';
 import { deleteRest } from '../actions';
 
 const FavoritesCard = props => {
-  console.log(props);
+  // console.log(props);
 
 
   const handleDelete = (e, id) => {
     e.preventDefault();
     props.deleteRest(id);
-
-  }
+}
 
   return (
     <DashboardCard>
@@ -47,6 +46,7 @@ export default connect(mapStateToProps, {deleteRest})(FavoritesCard);
 
 const DashboardCard = styled.div `
   border:1px solid black;
+  border-radius:5px;
   display:flex;
   justify-content:space-evenly;
   align-item:center;
@@ -56,8 +56,7 @@ const DashboardCard = styled.div `
 `
 const DashContainer = styled.div `
   border:1px solid red;
-  // display:flex;
-  // justify-content:center;
+  width:40%:
 `
 const SmallContainer = styled.div `
   border:1px solid blue;
