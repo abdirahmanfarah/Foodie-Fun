@@ -84,16 +84,16 @@ const InputA = styled.input `
   margin:10px auto;
   width:80%;
 `
-const SelectA = styled.select `
-  padding:10px;
-  margin:auto;
-  width:90%;
-`
-const TextareaA = styled.textarea `
-  padding:20px;
-  margin:10px auto;
-  width:100%;
-`
+// const SelectA = styled.select `
+//   padding:10px;
+//   margin:auto;
+//   width:90%;
+// `
+// const TextareaA = styled.textarea `
+//   padding:20px;
+//   margin:10px auto;
+//   width:100%;
+// `
 const ButtonRes = styled.button `
   padding:20px;
   margin:auto;

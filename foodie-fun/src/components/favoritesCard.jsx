@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { deleteRest } from '../actions';
 
 const FavoritesCard = props => {
-  // console.log(props);
-
-
   const handleDelete = (e, id) => {
     e.preventDefault();
     props.deleteRest(id);

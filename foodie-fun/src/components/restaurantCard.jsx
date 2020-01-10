@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import styled from 'styled-components';
 
 const RestaurantCard = props => {
-  console.log(props);
 
   return (
     <DashboardCard>
@@ -29,12 +28,12 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, {})(RestaurantCard);
 
 const DashboardCard = styled.div `
-  border:1px solid red;
+  border:1px solid black;
   display:flex;
   justify-content:space-evenly;
   align-item:center;
   padding:20px;
-  width:80%;
+  width:100%;
   margin: auto;
 `
 const Image = styled.img `

@@ -17,7 +17,7 @@ const RestaurantList = props => {
   useEffect(() => {
     props.fetchRestaurant();
     if(props.rest) {
-      console.log(props.rest)
+      // console.log(props.rest)
     }
   }, [])
 

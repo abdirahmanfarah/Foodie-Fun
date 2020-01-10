@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import styled from 'styled-components';
-// import { axiosWithAu } from '../utils/axiosWithAuth';
-import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class Login extends Component {

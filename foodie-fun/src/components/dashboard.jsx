@@ -12,12 +12,10 @@ import { fetchRestaurant } from '../actions/restaurantAction';
 import styled from 'styled-components';
 
 const Dashboard = props => {
-  console.log(props.rest);
-
   useEffect(() => {
     props.fetchRestaurant();
     if(props.rest) {
-      console.log(props.rest)
+      // console.log(props.rest)
     }
   }, [])
 
@@ -51,13 +49,14 @@ export default connect(mapStateToProps,
 //Styles
 
 const TestData = styled.div `
-  width:60%;
+  width:70%;
   display:flex;
-  border:1px solid red;
+  border:1px solid black;
   justify-content:space-evenly;
   align-item:center;
   flex-wrap:wrap;
   margin:20px auto;
+  padding:20px;
 `
 
 const CheckInButton = styled.button `
